@@ -1,7 +1,7 @@
 import { dividerClasses } from "@mui/material"
 import logo from "../assets/telefono.jpg"
 import carrito from "../assets/carrito.jpg"
-import coderhouse from "../assets/CODERHOUSE.jpg"
+import logo1 from "../assets/LOGO.png"
 import facebook from "../assets/facebook.jfif"
 import whatsapp from "../assets/whatsapp.png"
 import "./navBar/navBar.css"
@@ -12,7 +12,7 @@ const NavBar = () => {
         <>
         <div id="contenedor">
         <h1 class="display-1">TIENDA SUPERCEL ARGENTINA</h1>
-        <img src={coderhouse} alt="" id="CODERHOUSE" />
+        <img src={logo1} alt="" id="logo" />
 
         <header>
             

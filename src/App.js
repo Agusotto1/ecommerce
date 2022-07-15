@@ -11,7 +11,7 @@ function App() {
     
     <div className="App">
       <NavBar></NavBar>
-      <h1>Bienvenido a la tienda mas grande de Argentina</h1>
+      <h1 class="display-2">Bienvenido a la tienda mas grande de Argentina</h1>
       <button onClick={handleClick}>un boton</button>
       
     </div>

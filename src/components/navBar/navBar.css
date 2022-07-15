@@ -1,0 +1,78 @@
+#contenedor{
+    background-image: linear-gradient(#aecaea, white);
+    
+    
+    
+}
+header {
+    display: flex;
+    justify-content: center;
+    align-items: justify;
+    padding: 0px;
+    margin: 0px;
+    border:0px;
+    
+}
+
+.display-1{
+    
+    padding: 0%;
+    margin-top: 0px;
+    animation-duration: 2s;
+    animation-name: fadeIn;
+    align-content: space-between;
+
+}
+
+img {
+    max-width: 60px;
+    max-height: 60px;
+}
+#CODERHOUSE{
+    max-width: 200px;
+    max-height: 200px;
+}
+a {
+    text-decoration: none;
+    padding: 10px;
+
+}
+
+ul {
+    margin-top: 30px;
+    height: 40px;
+    display: flex;
+    list-style-type: none !important;
+    text-decoration: none !important;
+    justify-content: space-between;
+    align-content: center !important;
+    margin-right:40px;
+    font-style: color=black;
+}
+
+ul li:hover {
+    border-color: black;
+    color: white;
+    box-shadow: 0 0.5em 0.5em -0.4em black;
+    transform: translateY(-0.25em);
+    cursor: pointer;
+}
+
+hr{
+  
+    margin:0px;
+}
+
+#redes{
+    align-items: center;
+    text-align: end;
+    padding-right: 3px;
+    
+}
+
+.contactar{
+    max-width: 25px;
+    max-height: 25px;
+    padding-right: 10px;
+   
+}

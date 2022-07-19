@@ -1,10 +1,11 @@
-import { dividerClasses } from "@mui/material"
-import logo from "../assets/telefono.jpg"
-import carrito from "../assets/carrito.jpg"
-import logo1 from "../assets/LOGO.png"
-import facebook from "../assets/facebook.jfif"
-import whatsapp from "../assets/whatsapp.png"
-import "./navBar/navBar.css"
+
+
+import logo1 from "../assets/LOGO.png";
+import facebook from "../assets/facebook.jfif";
+import whatsapp from "../assets/whatsapp.png";
+import "./navBar/navBar.css";
+
+import Carrito from "./carrito/carrito";
 
 const NavBar = () => {
     return(
@@ -33,9 +34,10 @@ const NavBar = () => {
             
                 <img src={whatsapp} alt="" className="contactar" />
                 <img src={facebook} alt="" className="contactar" />
-            
+                <Carrito></Carrito>
             
         </div>
+        
         
         <hr />
 

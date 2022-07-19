@@ -1,0 +1,22 @@
+.item-product {
+    float: left;
+    width: 33.33%;
+    border: 10px;
+    box-shadow: 1px rgb(133, 133, 133);
+    display: grid;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding-left: 20px;
+    padding-top: 20px;
+}
+
+.producto {
+
+    height: 250px;
+    width: 250px;
+    object-fit: cover;
+    border-radius: 2%;
+
+}

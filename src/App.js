@@ -1,18 +1,23 @@
 
 import './App.css';
+//import ItemProduct from "./components/ItemProduct"
+import ItemContainer from "./components/ItemContainer/itemContainer";
+import ItemContainer2 from "./components/ItemContainer/itemContainer2";
 import NavBar from './components/navBar';
+
+
 
 function App() {
 
-  let nombre = "agustin ottonello"
-  const handleClick = () => console.log("presione el boton!")
+  
   return (
     //JSX
     
     <div className="App">
       <NavBar></NavBar>
-      <h1 class="display-2">Bienvenido a la tienda mas grande de Argentina</h1>
-      <button onClick={handleClick}>un boton</button>
+          <h1 class="display-2">Bienvenido a la tienda mas grande de Argentina</h1>
+      <ItemContainer section="productos mas buscados"/>
+      <ItemContainer2 section="productos mas baratos"/>    
       
     </div>
   );

@@ -17,8 +17,7 @@ function App() {
       <NavBar></NavBar>
           <h1 class="display-2">Bienvenido a la tienda mas grande de Argentina</h1>
       <ItemContainer section="productos mas buscados"/>
-      <ItemContainer2 section="productos mas baratos"/>    
-      
+      <ItemContainer2 section="productos mas baratos"/>
     </div>
   );
 }

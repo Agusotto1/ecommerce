@@ -8,8 +8,12 @@ const ItemProduct =({data, action}) =>{
 
     const{title, image, price, stock} = data;
     
+
+
+
     let cantProducto = data.stock
     const [contador, setContador] = useState(1);
+    
     const agregarProducto = () => {
         if (contador< cantProducto){
             setContador(contador + 1)

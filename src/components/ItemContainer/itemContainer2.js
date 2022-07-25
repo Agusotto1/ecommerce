@@ -1,37 +1,37 @@
-    import ItemProduct from "../itemProduct/ItemProduct"
-
+   
+    import { useState,useEffect} from "react"
+    import products2 from "../../utils/productsmock2.js"
+    import ItemList2 from "../itemList/itemList2.js"
 
 const ItemContainer2 =(props) =>{
-    const product1 = {
-        title:"alcate",
-        price:"$200", 
-        image:"alcatel.jpg",
-        stock:10,
+    const [listProduct, setListProduct] = useState([])
 
-    }
-    const product2 = {
-        title:"blackberry",
-        price:"$1200", 
-        image:"blackberry.png",
-        stock:8,
+    const getProducts = new Promise((resolve, reject) => {
+        setTimeout( () => {            
+            
+            resolve(products2)
+        }, 2000)   
+    })
 
-    }
-
-    const product3 = {
-        title:"Nokia",
-        price:"$50",
-        image:"nokia.png",
-        stock:5,
-
-    }
+    useEffect(() => {
+        getProducts
+            .then( (res) => { 
+                
+                setListProduct(res)
+            })
+            .catch( (error) => { 
+                console.log("error de conexion")
+            })
+            .finally( () => { 
+            
+            })
+    }, [])
 
     return(
         <div className='listProduct'>
             <h2>{props.section}</h2>
-            
-          <ItemProduct data={product1}/>
-          <ItemProduct data={product2}/>
-          <ItemProduct data={product3}/>
+            <ItemList2 dataProducts={listProduct}/>
+          
       </div>
       
 

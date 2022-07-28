@@ -1,14 +1,14 @@
 import { useState,useEffect} from "react"
-import products from "../../utils/productsmock.js"
-import ItemList from "../itemList/itemList.js"
+import products3 from "../../utils/productsmock3.js"
+import ItemList3 from "../itemList/itemList3.js"
 
-const ItemContainer =(props) =>{
+const ItemContainer3 =(props) =>{
 const [listProduct, setListProduct] = useState([])
 
 const getProducts = new Promise((resolve, reject) => {
     setTimeout( () => {            
         
-        resolve(products)
+        resolve(products3)
     }, 2000)   
 })
 
@@ -29,7 +29,7 @@ useEffect(() => {
 return(
     <div className='listProduct'>
         <h2>{props.section}</h2>
-        <ItemList dataProducts={listProduct}/>
+        <ItemList3 dataProducts={listProduct}/>
       
   </div>
   
@@ -38,4 +38,4 @@ return(
 
 }
 
-export default ItemContainer
+export default ItemContainer3

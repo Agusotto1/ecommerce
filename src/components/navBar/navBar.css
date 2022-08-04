@@ -77,3 +77,9 @@ hr{
     padding-right: 10px;
    
 }
+
+.barra{
+    border: 0px;
+    background-color: transparent;
+    text-decoration: white;
+}

@@ -1,7 +1,7 @@
 const products2 = [    
     {   
         id: 1,
-        title:"alcate",
+        title:"alcatel",
          price:"$200", 
         image:"alcatel.jpg",
         stock:10},

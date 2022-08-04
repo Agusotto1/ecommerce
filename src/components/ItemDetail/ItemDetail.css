@@ -1,0 +1,19 @@
+.item-product{
+    animation-duration: 2s;
+    animation-name: fadeIn;
+    align-content: center;
+
+}
+
+img{
+    animation-duration: 2s;
+    animation-name: fadeIn;
+}
+
+.item-detail1{
+    padding-top: 80px;
+    font-size: 30px;
+    color: grey;
+    animation-duration: 2s;
+    animation-name: fadeIn;
+}

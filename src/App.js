@@ -1,56 +1,35 @@
 
 import './App.css';
 //import ItemProduct from "./components/ItemProduct"
-import ItemContainer from "./components/ItemContainer/itemContainer";
-import ItemContainer2 from "./components/ItemContainer/itemContainer2";
-import ItemContainer3 from './components/ItemContainer/itemContainer3';
+
 import NavBar from './components/navBar';
-
-
+import {BrowserRouter, Routes, Route} from "react-router-dom"
+import Home from "./pages/Home"
+import Contact from "./pages/Contact.js"
+import Products from "./pages/Products.js"
+import Detail from './pages/Detail';
+import Checkout from './pages/Checkout';
 
 function App() {
-  //aca se utiliza el metodo get, que es por defecto
-  //si yo quiero agregar otro metodo ej POST 
-  //fetch("https://jsonplaceholder.typicode.com/users")
-  //.then((response) =>{
-  //  return response.json()
-    
-  //})
-  //.then ( (res) =>{
-  //  alert("usuarios" + res )
-  //}
-
-  //)
-
-  //fetch("https://jsonplaceholder.typicode.com/users",{
-  //method:"POST",
-  //body:{
-  //email:"dsasdas",
-  //password:"asaasa",
-  //}
-  //})
-  //.then((response) =>{
-  //  return response.json()
-    
-  //})
-  //.then ( (res) =>{
-  //  alert("usuarios" + res )
-  //}
-
-  //)
+  
 
   
   
   return (
     //JSX
-    
+    <BrowserRouter>
     <div className="App">
       <NavBar></NavBar>
-          <h1 class="display-2">Bienvenido a la tienda mas grande de Argentina</h1>
-      <ItemContainer section="productos mas buscados"/>
-      <ItemContainer2 section="productos mas baratos"/>
-      <ItemContainer3 section="detalle del producto seleccionado" />
+      <Routes>
+        <Route path="/" element={< Home/>} />
+        <Route path='/Products' element={<Products/>} />
+        <Route path='/:category/:id' element={<Detail/>} />
+        <Route path="/Contact" element={< Contact/>} />
+        <Route path='/cart' element={<Checkout />}/>
+        <Route path="*" element={<h1>error 404 pagina no encontrada</h1>} />
+      </Routes>
     </div>
+    </BrowserRouter>
   );
 }
 

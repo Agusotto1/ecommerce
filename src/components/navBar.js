@@ -4,6 +4,10 @@ import logo1 from "../assets/LOGO.png";
 import facebook from "../assets/facebook.jfif";
 import whatsapp from "../assets/whatsapp.png";
 import "./navBar/navBar.css";
+import {Link} from "react-router-dom"
+import TipoProductos from "./tiposproductos/TipoProductos"
+
+
 
 import Carrito from "./carrito/carrito";
 
@@ -19,12 +23,9 @@ const NavBar = () => {
             
             <nav><ul>
 
-                <li> <a href="index.html">inicio </a></li>
-                <li> <a href="html/servicios.html"> servicios </a></li>
-                <li> <a href="html/mision.html"> productos </a></li>
-                <li> <a href="html/equipo.html"> quienes somos </a></li>
-                <li> <a href="html/contacto.html"> contacto</a></li>
-            
+                <Link to="/"> <li> <button className="barra">Home</button></li> </Link>
+                <Link to="/Contact"> <li> <button className="barra">Contact</button></li> </Link>
+                <Link to="/Products"> <li> <button className="barra">Products</button></li> </Link>
              </ul>
              </nav>
              
@@ -37,8 +38,8 @@ const NavBar = () => {
                 <Carrito></Carrito>
             
         </div>
-        
-        
+       
+
         <hr />
 
         </div>     

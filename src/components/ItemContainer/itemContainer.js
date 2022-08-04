@@ -29,7 +29,10 @@ useEffect(() => {
 return(
     <div className='listProduct'>
         <h2>{props.section}</h2>
-        <ItemList dataProducts={listProduct}/>
+        <ItemList dataProducts={listProduct} >
+            
+        </ItemList>
+        
       
   </div>
   

@@ -1,30 +1,42 @@
 import { useState,useEffect} from "react"
 import products from "../../utils/productsmock.js"
 import ItemList from "../itemList/itemList.js"
+import {useParams} from "react-router-dom"
+
+
 
 const ItemContainer =(props) =>{
-const [listProduct, setListProduct] = useState([])
 
-const getProducts = new Promise((resolve, reject) => {
+    const [listProduct, setListProduct] = useState([])
+    const { category } = useParams()
+    const filterCategory = products.filter((products) => products.category === category)
+
+
+
+    const getProducts = new Promise((resolve, reject) => {
     setTimeout( () => {            
+        if (category) {
+            resolve(filterCategory)
+        }else{
+            resolve(products)
+        }
         
-        resolve(products)
     }, 2000)   
-})
+    })
 
-useEffect(() => {
-    getProducts
-        .then( (res) => { 
+    useEffect(() => {
+        getProducts
+            .then( (res) => { 
             
             setListProduct(res)
-        })
-        .catch( (error) => { 
+            })
+            .catch( (error) => { 
             console.log("error de conexion")
-        })
-        .finally( () => { 
+             })
+            .finally( () => { 
         
-        })
-}, [])
+            })
+    }, [])
 
 return(
     <div className='listProduct'>

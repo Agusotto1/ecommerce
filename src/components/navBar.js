@@ -5,7 +5,7 @@ import facebook from "../assets/facebook.jfif";
 import whatsapp from "../assets/whatsapp.png";
 import "./navBar/navBar.css";
 import {Link} from "react-router-dom"
-import TipoProductos from "./tiposproductos/TipoProductos"
+
 
 
 
@@ -26,6 +26,7 @@ const NavBar = () => {
                 <Link to="/"> <li> <button className="barra">Home</button></li> </Link>
                 <Link to="/Contact"> <li> <button className="barra">Contact</button></li> </Link>
                 <Link to="/Products"> <li> <button className="barra">Products</button></li> </Link>
+                <Link to="/Category"> <li> <button className="barra">Category</button></li> </Link>
              </ul>
              </nav>
              

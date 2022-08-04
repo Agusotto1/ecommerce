@@ -1,0 +1,15 @@
+#CAT{
+    display: block;
+    align-items: center;
+    margin: 30px;
+    padding: 30px;    
+    border: 30px;
+}
+
+.CAT1{
+    margin-bottom: 30px;
+    border-style: solid;
+    padding: 20px;
+    margin-left: 500px;
+    margin-right: 500px;
+}

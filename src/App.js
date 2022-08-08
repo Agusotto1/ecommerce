@@ -11,6 +11,9 @@ import Detail from './pages/Detail';
 import Checkout from './pages/Checkout';
 import Category from "./pages/Category.js"
 import ItemContainer from './components/ItemContainer/itemContainer';
+import CartProvider from './context/CartContext';
+
+
 
 function App() {
   
@@ -19,21 +22,23 @@ function App() {
   
   return (
     //JSX
-    <BrowserRouter>
-    <div className="App">
-      <NavBar></NavBar>
-      <Routes>
-        <Route path="/" element={< Home/>} />
-        <Route path='/Products' element={<Products/>} />
-        <Route path='/Products/:id' element={<Detail/>} />
-        <Route path="category/:category" element={<ItemContainer/>}/>
-        <Route path="category/" element={<Category/>}/>
-        <Route path="/Contact" element={< Contact/>} />
-        <Route path='/cart' element={<Checkout />}/>
-        <Route path="*" element={<h1>error 404 pagina no encontrada</h1>} />
-      </Routes>
-    </div>
-    </BrowserRouter>
+   <CartProvider>
+      <BrowserRouter>
+      <div className="App">
+        <NavBar></NavBar>
+        <Routes>
+          <Route path="/" element={< Home/>} />
+          <Route path='/Products' element={<Products/>} />
+          <Route path='/Products/:id' element={<Detail/>} />
+          <Route path="category/:category" element={<ItemContainer/>}/>
+          <Route path="category/" element={<Category/>}/>
+          <Route path="/Contact" element={< Contact/>} />
+          <Route path='/cart' element={<Checkout />}/>
+          <Route path="*" element={<h1>error 404 pagina no encontrada</h1>} />
+        </Routes>
+      </div>
+      </BrowserRouter>
+    </CartProvider>
   );
 }
 

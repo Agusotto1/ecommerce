@@ -4,22 +4,17 @@ import "../itemProduct/itemProduct.css"
 import { Link } from 'react-router-dom';
 
 
-
 //le pasamos el valor asignado en el itemContainer
 const ItemProduct =({data, action}) =>{
     
 
-
     const{title, image, price, stock, id} = data;
-    
+  
 
 
 
-    
-    
-    
+
    
-
     return(
         
         <div className="item-product">
@@ -30,7 +25,9 @@ const ItemProduct =({data, action}) =>{
                     <span>{price}</span>
                     <p>stock: {stock}</p>
                     
+                    
             </Link>
+                    
         </div>
 
 

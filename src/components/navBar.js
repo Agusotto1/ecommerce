@@ -10,6 +10,7 @@ import {Link} from "react-router-dom"
 
 
 import Carrito from "./carrito/carrito";
+import CartWidget from "./navBar/CartWidget";
 
 const NavBar = () => {
     return(
@@ -36,7 +37,7 @@ const NavBar = () => {
             
                 <img src={whatsapp} alt="" className="contactar" />
                 <img src={facebook} alt="" className="contactar" />
-                <Carrito></Carrito>
+                <CartWidget />
             
         </div>
        

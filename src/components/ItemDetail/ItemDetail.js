@@ -27,7 +27,7 @@ const ItemDetail = ({ data }) => {
 
             {
                quantitySelected >0 ? <button><Link to="/cart">TERMINAR COMPRA</Link></button> 
-               : <ItemCount setQuantitySelected={setQuantitySelected} cantProduct={data.stock} />
+               : <ItemCount setQuantitySelected={setQuantitySelected} cantProduct={data.stock} productData={data}/>
             }
 
 

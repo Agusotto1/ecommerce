@@ -7,7 +7,7 @@ const ItemCount = ({cantProduct, setQuantitySelected, productData}) =>{
 
 
     const {addProductToCart} = useContext(CartContext)
-    const {addQuantity} = useContext(CartContext)
+    //const {addQuantity} = useContext(CartContext)
     
     const [countQuantity, setCountQuantity] =useState(1)
     
@@ -33,7 +33,8 @@ const ItemCount = ({cantProduct, setQuantitySelected, productData}) =>{
 
     const onAdd = () => {
        
-        addProductToCart(productData)
+        addProductToCart(productData, countQuantity)
+        //addQuantity(countQuantity)
         setQuantitySelected(countQuantity)
         
         
@@ -49,7 +50,7 @@ const ItemCount = ({cantProduct, setQuantitySelected, productData}) =>{
             <button onClick={addCantidad} > + </button>
 
         </div>
-        <button onClick={onAdd}>AGREGAR AL CARRITO</button>
+        <button onClick={() => onAdd(countQuantity)}>AGREGAR AL CARRITO</button>
         </>
 
     )

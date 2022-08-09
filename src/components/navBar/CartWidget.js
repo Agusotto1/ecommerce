@@ -9,7 +9,9 @@ import { CartContext } from '../../context/CartContext';
 const CartWidget = () => {
     const [anchorEl, setAnchorEl] = useState(null);
 
-    const { cartProducts, clear } = useContext(CartContext)
+    const { cartProducts, clear, clearProduct } = useContext(CartContext)
+    
+    
     
 
     const open = Boolean(anchorEl);
@@ -45,14 +47,29 @@ const CartWidget = () => {
                                 
                             </div>
                             <div className='cart-product__details'>
-                                <p>$ {product.price}</p>
+                                <p className='espacio'> $ {product.price}</p>
                             </div>
-                            
+                            <div>
+                                <p className='espacio'> cantidad seleccionada: {product.countQuantity}</p>
+                            </div>
+                            <div className="cart-product__details">
+                                    <p className='espacio'>Total:$ { product.price * product.countQuantity }</p>
+                                    
+                            </div>
+                            <div className="cart-product__action">
+                                    <button className='btn-small waves-effect waves-light' onClick={()=>clearProduct(product.id)}>Eliminar producto</button>
+                                    </div>
+
+                           
                         </div>
+                        
                     )
                 })}
+                
+                            
             
-                <button onClick={() => clear()}>Borrar todo</button>
+                <button className='borrarTodo' onClick={() => clear()}>Borrar todo</button>
+               
             </Menu>
         </div>
     )

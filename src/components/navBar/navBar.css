@@ -1,10 +1,10 @@
-#contenedor{
-    background-image: linear-gradient(white,rgb(192, 192, 192));
+#contenedor {
+    background-image: linear-gradient(white, rgb(192, 192, 192));
 }
-    
-    
-    
-    
+
+
+
+
 
 header {
     display: flex;
@@ -12,18 +12,18 @@ header {
     align-items: justify;
     padding: 0px;
     margin: 0px;
-    border:0px;
-    
+    border: 0px;
+
 }
 
-.display-1{
-    
+.display-1 {
+
     padding: 0%;
     margin-top: 0px;
     animation-duration: 2s;
     animation-name: fadeIn;
     align-content: space-between;
-    
+
 
 }
 
@@ -33,10 +33,11 @@ header {
 }
 
 
-#logo{
+#logo {
     max-width: 200px;
     max-height: 200px;
 }
+
 a {
     text-decoration: none;
     padding: 10px;
@@ -50,7 +51,7 @@ ul {
     text-decoration: none !important;
     justify-content: space-between;
     align-content: center !important;
-    margin-right:40px;
+    margin-right: 40px;
     font-style: color=black;
 }
 
@@ -62,35 +63,35 @@ ul li:hover {
     cursor: pointer;
 }
 
-hr{
-  
-    margin:0px;
+hr {
+
+    margin: 0px;
 }
 
-#redes{
+#redes {
     align-content: center;
     align-items: center;
     text-align: end;
     padding-right: 3px;
-    
+
 }
 
-.contactar{
+.contactar {
     max-width: 50px;
     max-height: 50px;
     padding-right: 10px;
-   
+
 }
 
-.barra{
+.barra {
     border: 0px;
     background-color: transparent;
     text-decoration: white;
 }
 
 .item-cart-product {
-    
-    display: flex;
+
+    display: grid;
     max-width: 1000px;
     border-bottom: 1px solid #ccc;
     padding-bottom: 10px;
@@ -100,34 +101,41 @@ hr{
     width: 25px;
 }
 
-.item-cart-product img  {
+.item-cart-product img {
     width: 80px;
     display: inline-block;
     flex-direction: column;
     justify-content: center;
 }
 
-.cart-product__details{
+.cart-product__details {
     width: 350px;
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
 
-.item-cart-product  {
+.item-cart-product {
     width: 300px;
-   
+
     align-items: center;
 }
 
-.cart-product__details:nth-last-child(2){
+.cart-product__details:nth-last-child(2) {
     width: 300px;
     display: flex;
     align-items: center;
 
 }
+
 .cart-product__action {
     width: 10%;
     display: flex;
     align-items: center;
+}
+
+
+
+.borrarTodo{
+    margin: 50px;
 }

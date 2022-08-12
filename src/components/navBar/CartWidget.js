@@ -9,7 +9,7 @@ import { CartContext } from '../../context/CartContext';
 const CartWidget = () => {
     const [anchorEl, setAnchorEl] = useState(null);
 
-    const { cartProducts, clear, clearProduct } = useContext(CartContext)
+    const { cartProducts, clear, clearProduct, totalPrice } = useContext(CartContext)
     
     
     
@@ -22,7 +22,8 @@ const CartWidget = () => {
         setAnchorEl(null);
     };
     return(
-        <div className='cart-widget'>
+        <div className='cart-widget'   >
+            <p>{cartProducts.length}</p>
             <ShoppingCartIcon 
                 aria-controls={open ? 'basic-menu' : undefined}
                 aria-haspopup="true"
@@ -67,7 +68,7 @@ const CartWidget = () => {
                 })}
                 
                             
-            
+                <h1>total price $ {totalPrice}</h1>
                 <button className='borrarTodo' onClick={() => clear()}>Borrar todo</button>
                
             </Menu>

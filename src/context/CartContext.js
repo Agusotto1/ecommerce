@@ -8,6 +8,7 @@ const CartProvider = ({children}) =>{
     
         
     const [cartProducts, setCartProduct] =useState([])
+    const [totalPrice, setTotalPrice] = useState(0)
 
     
     const addProductToCart = (product, ItemCount) => {         
@@ -22,10 +23,12 @@ const CartProvider = ({children}) =>{
             return false;
 
             isProductInCart.countQuantity += ItemCount
+            setTotalPrice(totalPrice + product.price)
         } else {
             product.countQuantity = ItemCount;
 
             setCartProduct ([...cartProducts, product]);
+            setTotalPrice(totalPrice + product.price)
         }
 
          
@@ -36,6 +39,7 @@ const CartProvider = ({children}) =>{
    
     const clear = () => {
         setCartProduct([])
+        setTotalPrice(totalPrice - totalPrice)
     }
 
     const clearProduct = ( id ) => {
@@ -49,6 +53,7 @@ const CartProvider = ({children}) =>{
         setCartProduct,
         clear,
         clearProduct,
+        totalPrice
         
         
         

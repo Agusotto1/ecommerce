@@ -1,5 +1,7 @@
 import ItemDetail from "../ItemDetail/ItemDetail.js"
 import products from "../../utils/productsmock.js"
+import './ItemDetailContainer.scss'
+import Modal from '../Modal/Modal'
 
 import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
@@ -9,7 +11,7 @@ import { useParams } from "react-router-dom"
 
 const ItemDetailContainer = () =>{
     const [productData, setProductData] = useState({})
-    
+    const [showModal, setShowModal] = useState(false)
     const {id, category} = useParams( )
     
     useEffect( () =>{
@@ -52,9 +54,17 @@ const ItemDetailContainer = () =>{
     
 
     return (
-        <div>
+        <div className={`container-item-detail ${showModal ? 'overlay-black' : ''}`}>
             
-            <ItemDetail data={productData}/>
+            <ItemDetail data={productData} setShowModal={setShowModal}/>
+            {showModal=== true && (
+                <Modal title="Image of the selected product" close={setShowModal} >
+                    <img src={`/assets/${productData.image}`} />
+                </Modal>
+
+            )}
+            
+            
 
         </div>
 

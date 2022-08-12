@@ -2,7 +2,7 @@ import "../ItemDetail/ItemDetail.css"
 import ItemCount from "../ItemCount/ItemCount"
 import { useState } from "react"
 import {Link} from "react-router-dom"
-const ItemDetail = ({ data }) => {
+const ItemDetail = ({ data, setShowModal }) => {
 
     
     
@@ -16,10 +16,16 @@ const ItemDetail = ({ data }) => {
     return (
         <>
             <div className="item-detail1">
-                <img src={`/assets/${data.image}`} alt="" className="producto" />
+                
+                <img 
+                    src={`/assets/${data.image}`} 
+                    alt="" className="producto" 
+                    onClick={() => setShowModal(true)}
+                />
+
                 <p>{data.title}</p>
                 <span>price: {data.price}</span>
-                <p>stock: {data.stock}</p>
+                <p>available stock: {data.stock}</p>
                 <p>category: {data.category}</p>
                
                 

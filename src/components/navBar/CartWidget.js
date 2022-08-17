@@ -9,7 +9,7 @@ import { CartContext } from '../../context/CartContext';
 const CartWidget = () => {
     const [anchorEl, setAnchorEl] = useState(null);
 
-    const { cartProducts, clear, clearProduct, totalPrice } = useContext(CartContext)
+    const { cartProducts, clear, clearProduct, totalCart } = useContext(CartContext)
     
     
     
@@ -40,6 +40,7 @@ const CartWidget = () => {
                 }}
             >
                 {cartProducts.map((product) => {
+                    
                     return(
                         <div className='item-cart-product' key={product.id}>
                             <img src={`/assets/${product.image}`} alt="" />
@@ -58,7 +59,7 @@ const CartWidget = () => {
                                     
                             </div>
                             <div className="cart-product__action">
-                                    <button className='btn-small waves-effect waves-light' onClick={()=>clearProduct(product.id)}>Eliminar producto</button>
+                                    <button className='btn-small waves-effect waves-light' onClick={()=>clearProduct(product.id) }>Eliminar producto</button>
                                     </div>
 
                            
@@ -68,7 +69,7 @@ const CartWidget = () => {
                 })}
                 
                             
-                <h1>total price $ {totalPrice}</h1>
+                <h1>total price $ {totalCart}</h1>
                 <button className='borrarTodo' onClick={() => clear()}>Borrar todo</button>
                
             </Menu>

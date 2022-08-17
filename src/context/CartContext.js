@@ -8,8 +8,8 @@ const CartProvider = ({children}) =>{
     
         
     const [cartProducts, setCartProduct] =useState([])
-    const [totalPrice, setTotalPrice] = useState(0)
-
+    const [totalCart, setTotalCart] = useState(0)
+    let [totalProducts, setTotalProducts] = useState(0)
     
     const addProductToCart = (product, ItemCount) => {         
             
@@ -23,13 +23,18 @@ const CartProvider = ({children}) =>{
             return false;
 
             isProductInCart.countQuantity += ItemCount
-            setTotalPrice(totalPrice + product.price)
+            setTotalProducts(isProductInCart.countQuantity + totalProducts)
         } else {
             product.countQuantity = ItemCount;
 
             setCartProduct ([...cartProducts, product]);
-            setTotalPrice(totalPrice + product.price)
+            setTotalProducts(ItemCount + totalProducts)
         }
+
+        setTotalCart(
+            totalCart + product.price * product.countQuantity
+        )
+        
 
          
     }           
@@ -39,21 +44,33 @@ const CartProvider = ({children}) =>{
    
     const clear = () => {
         setCartProduct([])
-        setTotalPrice(totalPrice - totalPrice)
+        
+        setTotalCart(totalCart-totalCart)
     }
 
     const clearProduct = ( id ) => {
+        const prod = cartProducts.find((product) => product.id === id)
+        setTotalCart(
+            totalCart - prod.price * prod.countQuantity
+        )
+
+        setTotalProducts(totalProducts - prod.countQuantity)
+
         const newCart = cartProducts.filter((product) => product.id !== id)
         setCartProduct(newCart);
-    
     }
+
+    
+
+
     const data= {
         addProductToCart,
         cartProducts,
         setCartProduct,
         clear,
         clearProduct,
-        totalPrice
+        totalCart,
+        
         
         
         

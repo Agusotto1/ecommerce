@@ -2,30 +2,32 @@ import { useState,useEffect} from "react"
 import products from "../../utils/productsmock.js"
 import ItemList from "../itemList/itemList.js"
 import {useParams} from "react-router-dom"
+import { getFirestore,collection, getDocs, query, where } from "firebase/firestore"
+import db from "../../firebaseConfig"
 
 
 
 const ItemContainer =(props) =>{
+    const [listProduct, setListProducts] = useState([])
+    const {category} = useParams()
 
-    const [listProduct, setListProduct] = useState([])
-    const { category } = useParams()
-    const filterCategory = products.filter((products) => products.category === category)
-
-
-
-    const getProducts = new Promise((resolve, reject) => {
-    setTimeout( () => {            
-        if (category) {
-            resolve(filterCategory)
+    useEffect(()=>{
+        const querydb = getFirestore
+        const queryCollection = collection(db,"productos")
+        if (category){
+            const queryFilter= query(queryCollection, where("category" , "==", category))
+            getDocs(queryFilter)
+            .then(res =>setListProducts (res.docs.map(product =>({id: product.id, ...product.data()}))))
         }else{
-            resolve(products)
+        getDocs(queryCollection)
+        .then(res =>setListProducts (res.docs.map(product =>({id: product.id, ...product.data()}))))
         }
+    },[category])// eslint-disable-line react-hooks/exhaustive-deps
+       
         
-    }, 2000)   
-    })
-
-    useEffect(() => {
-        getProducts
+       
+       
+        /* getProducts
             .then( (res) => { 
             
             setListProduct(res)
@@ -35,9 +37,16 @@ const ItemContainer =(props) =>{
              })
             .finally( () => { 
         
-            })
-    }, [])
+            }) */
+    
 
+    /*useEffect(() =>{
+        getProducts1()
+        .then((res) =>{
+            setListProduct(res)
+        })
+    }, [])
+    */
 return(
     <div className='listProduct'>
         <h2>{props.section}</h2>

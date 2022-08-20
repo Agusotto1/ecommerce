@@ -72,7 +72,7 @@ const products = [
 
     {
         id:8,
-        title:"Samsung Flip 4 ",
+        title:"Samsung Flip 4",
         price:2000,
         image:"flip.jpg",
         stock:10,

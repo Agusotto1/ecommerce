@@ -6,53 +6,26 @@ import Modal from '../Modal/Modal'
 import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
 
+import db from "../../firebaseConfig"
+import { getFirestore, doc, getDoc, Query } from "firebase/firestore"
+import { async } from "@firebase/util"
 
 
 
-const ItemDetailContainer = () =>{
-    const [productData, setProductData] = useState({})
-    const [showModal, setShowModal] = useState(false)
-    const {id, category} = useParams( )
-    
-    useEffect( () =>{
-        filtrarPorId()
-    }
 
-    )
+const ItemDetailContainer = ({category}) =>{
+    const [productData, setProductData] = useState({});
+    const [showModal, setShowModal] = useState(false);
+    const {id} = useParams ();
+        useEffect(()=>{
+       
+        const querydb = getFirestore();    
+        const queryDoc = doc(db, "productos", id)
+        getDoc(queryDoc)
+        .then(res=>setProductData({id: res.id, ...res.data()}))
+    },[id])
 
-    
-
-    
-    const filtrarPorId =() =>{
-
-        products.some( (product) =>{
-            if(product.id == id){
-                setProductData(product)
-            }
-    }
-        )
-    }
-
-    useEffect( () =>{
-        filtrarPorCategory()
-    }
-
-    )
-
-    const filtrarPorCategory =() =>{
-
-        products.some( (product) =>{
-            if(product.category == category){
-                setProductData(product)
-            }
-    }
-        )
-    }
-
-    
-
-    
-
+   
     return (
         <div className={`container-item-detail ${showModal ? 'overlay-black' : ''}`}>
             

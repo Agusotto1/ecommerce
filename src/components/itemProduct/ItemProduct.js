@@ -22,7 +22,7 @@ const ItemProduct =({data, action}) =>{
             <Link  to={`/products/${id}`}>        
                     <img src={`/assets/${image}`} alt="" className="producto" /> 
                     <p>{title}</p>
-                    <span>{price}</span>
+                    <p>price: ${price}</p>
                     <p>stock: {stock}</p>
                     
                     

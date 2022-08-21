@@ -24,7 +24,7 @@ const ItemDetail = ({ data, setShowModal }) => {
                 />
 
                 <p>{data.title}</p>
-                <span>price: {data.price}</span>
+                <p>price: {data.price}</p>
                 <p>available stock: {data.stock}</p>
                 <p>category: {data.category}</p>
                

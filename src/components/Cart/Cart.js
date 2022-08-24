@@ -16,7 +16,8 @@ const Cart = () => {
             return {
                 id: product.id,
                 title: product.title,
-                price: product.price
+                price: product.price,
+                quantity: product.countQuantity
 
             }
         } ),
@@ -74,29 +75,73 @@ const Cart = () => {
                     )
                 })}
         </div>
-        <div className="todoTotal">          
+        <div className="todoTotal">
+                <div className="todoTotalInterno">         
                         <h1>total price $ {totalCart}</h1>
                         <button onClick={()=>setShowModal(true)}>finalizar compra</button>
-                     
+                </div>  
                         {showModal  &&
-                            <Modal title="contact info" close={()=>setShowModal()}>
-                               {success ?  
-                               (
-                                <>
-                                   <h2>Su orden se genero correctamente</h2>
-                                   <p>ID de compra : {success}</p>
-                                </>
-                                ) :
-                                (<form onSubmit={submitData}>
-                                    <input type="text"   name="name"  placeholder="nombre"   onChange={handleChange} value={formData.name}/>
-                                    <input type="number" name="phone" placeholder="telefono" onChange={handleChange} value={formData.phone}/>
-                                    <input type="email"  name="email" placeholder="email"    onChange={handleChange} value={formData.email}/>
-                                    <button type="submit">enviar</button>
-                                </form>
-                                )
-                                }
-                            </Modal>
-                        }
+                            <>
+                            <div className={`container-item-detail ${showModal ? 'overlay-black' : ''}`}>
+                                <Modal title="contact info" close={()=>setShowModal()}>
+                                {success ?  
+                                (
+                                    <>
+                                    <h2>Su orden se genero correctamente</h2>
+                                    <p>ID de compra : {success}</p>
+                                    </>
+                                    ) :
+                                    (<form id="form" onSubmit={submitData} >
+                                        
+                                        <div className="divForm">
+                                            <h3>por favor ingrese los siguientes campos</h3>
+                                            <input
+                                                className="inputForm" 
+                                                type="text"  
+                                                name="name"  
+                                                placeholder="ingrese su nombre"   
+                                                inputMode="text"
+                                                onChange={handleChange} 
+                                                value={formData.name}
+                                                required
+                                            />
+                                            <br />
+
+                                            <input 
+                                                className="inputForm"
+                                                type="number" 
+                                                name="phone" 
+                                                placeholder="ingrese su telefono" 
+                                                inputMode="number" 
+                                                pattern= '[0-9]' 
+                                                onChange={handleChange} 
+                                                value={formData.phone}
+                                                required
+                                            />
+                                            <br />
+
+                                            <input
+                                                className="inputForm" 
+                                                type="email"  
+                                                name="email" 
+                                                placeholder=" ingrese su email"    
+                                                inputMode="email"  
+                                                onChange={handleChange} 
+                                                value={formData.email}
+                                                required
+                                            />
+                                            <br />
+                                        
+                                            <button className="buttonForm" type="submit">enviar</button>
+                                            
+
+                                        </div>
+                                    </form>
+                                    )
+                                    }
+                                </Modal>
+                                </div>
+                            </>}
         </div>
                     
                     

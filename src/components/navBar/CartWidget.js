@@ -4,6 +4,7 @@ import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import DeleteIcon from '@mui/icons-material/Delete';
 import { CartContext } from '../../context/CartContext';
+import "./navBar/CartWidget.css"
 
 
 const CartWidget = () => {

@@ -17,3 +17,16 @@ img{
     animation-duration: 2s;
     animation-name: fadeIn;
 }
+
+.item-product:hover{
+    border-color: black;
+    color: white;
+    text-decoration: black;
+    transform: translateY(-0.25em);
+    cursor: pointer;
+}
+
+a:hover{
+    color: black;
+    
+}

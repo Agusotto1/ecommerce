@@ -44,6 +44,7 @@ a {
 
 }
 
+
 ul {
     margin-top: 30px;
     display: flex;
@@ -81,6 +82,13 @@ hr {
     max-height: 50px;
     padding-right: 10px;
 
+}
+
+.contactar:hover{
+    color: black;
+    box-shadow: 0 0.5em 0.5em -0.4em black;
+    transform: translateY(-0.25em);
+    cursor: pointer;
 }
 
 .barra {
@@ -138,4 +146,12 @@ hr {
 
 .borrarTodo{
     margin: 50px;
+}
+
+.MuiSvgIcon-root:hover{
+   
+    color: black;
+    box-shadow: 0 0.5em 0.5em -0.4em black;
+    transform: translateY(-0.25em);
+    cursor: pointer;
 }

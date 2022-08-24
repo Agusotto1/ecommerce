@@ -37,9 +37,9 @@ const NavBar = () => {
             
                 <img src={whatsapp} alt="" className="contactar" />
                 <img src={facebook} alt="" className="contactar" />
-                <CartWidget />
-            
-        </div>
+                 <CartWidget  />
+        </div>    
+        
        
 
         <hr />

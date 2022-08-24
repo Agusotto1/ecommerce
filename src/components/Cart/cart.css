@@ -23,10 +23,59 @@
 }
 
 .todoTotal{
+    display: grid;
     align-items: center;
     margin-bottom: 30px;
-    border-style: solid;
     padding: 20px;
-    margin-left: 500px;
-    margin-right: 500px;
+   
+}
+
+.todoTotalInterno{
+    display: grid;
+    justify-items: center;
+    border-style: solid;
+    margin-left: 700px;
+    margin-right: 700px;
+    padding-bottom: 20px;
+    
+}
+.overlay-black::before {
+    content: "";
+    position: fixed;
+    left: 0;
+    top: 0;
+    background: #00000080;
+    width: 100vw;
+    height: 100vh;
+    z-index: 1;
+}
+
+#form{
+    display: grid;
+    align-content:space-between ;
+    justify-content: center;
+    margin-bottom: 30px;
+    
+    padding: 20px;
+    
+}
+.inputForm{
+    margin: 30px;
+    
+    
+}
+.divForm{
+    align-content:center;
+    border-style: solid;
+    padding-bottom: 20px;
+}
+
+#buttonForm{
+    margin: 400px;
+}
+
+.modal-custom{
+    padding-left: 400px;
+    padding-right: 400px;
+    border-style: solid;
 }

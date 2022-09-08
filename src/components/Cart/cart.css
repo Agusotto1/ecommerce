@@ -30,15 +30,6 @@
    
 }
 
-.todoTotalInterno{
-    display: grid;
-    justify-items: center;
-    border-style: solid;
-    margin-left: 700px;
-    margin-right: 700px;
-    padding-bottom: 20px;
-    
-}
 .overlay-black::before {
     content: "";
     position: fixed;

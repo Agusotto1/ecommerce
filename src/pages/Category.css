@@ -1,6 +1,7 @@
 #CAT{
-    display: block;
+   display: grid;
     align-items: center;
+    justify-content: center;
     margin: 30px;
     padding: 30px;    
     border: 30px;
@@ -12,4 +13,5 @@
     padding: 20px;
     margin-left: 500px;
     margin-right: 500px;
+    border-radius: 4%;
 }
